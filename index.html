@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeDash - Página Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 2;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: #444;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem 0;
+        }
+
+        section {
+            background: #fff;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        section p {
+            margin: 1rem 0;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TypeDash</h1>
+        <nav>
+            <ul>
+                <li><a href="#teste">Teste</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+                <li><a href="#usuario">Usuário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="teste">
+            <h2>Teste de Digitação</h2>
+            <p>Responda um rápido questionário e faça seu teste personalizado.</p>
+            <button>Iniciar Teste</button>
+        </section>
+
+        <section id="resultados">
+            <h2>Resultados</h2>
+            <p>Veja suas tentativas anteriores.</p>
+            <button>Ver Resultados</button>
+        </section>
+
+        <section id="dicas">
+            <h2>Dicas de Digitação</h2>
+            <p>Confira dicas para melhorar sua postura e eficiência ao digitar.</p>
+            <button>Ler Dicas</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TypeDash.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
